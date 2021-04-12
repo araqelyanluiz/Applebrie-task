@@ -1,0 +1,7 @@
+<app-header *ngIf="router.url!='/'"></app-header>
+<div class="wrapper">
+    <div class="full-width">
+        <router-outlet></router-outlet>
+    </div>
+    <app-side-bar *ngIf="router.url!='/'"></app-side-bar>
+</div>

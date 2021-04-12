@@ -1,0 +1,46 @@
+<div class="rates page">
+    <div class="container">
+        <div class="header">
+            <h3>Currency Exchange Rates</h3>
+        </div>
+        <div class="currency-exchange">
+            <ng-container *ngIf="rates$ | async as data">
+                <div class="form">
+                    <form class="py-4" [formGroup]="dataForm">
+                        <div class="row mt-4">
+                            <div class="col-md-5">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <select class="form-control" aria-label="Default select example" formControlName="from" (change)="getExchange()">
+                                        <option selected disabled [value]="null">Currency</option>
+                                        <option *ngFor="let item of currencyList" [value]="item.value">{{item.name}}</option>
+                                    </select>
+                                    <input class="form-control" type="number" formControlName="amount" (keyup)="getExchange()">
+                                </div>
+                            </div>
+                            <div class="col-md-1 d-flex align-items-center justify-content-center">
+                                <span class="mx-3"> = </span>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <select class="form-control" aria-label="Default select example" formControlName="to" (change)="getExchange()">
+                                        <option selected disabled [value]="null">Currency</option>
+                                        <option *ngFor="let item of currencyList" [value]="item.value">{{item.name}}</option>
+                                    </select>
+                                    <input class="form-control" type="number" formControlName="sum" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <p><b>Main Currency:</b> {{data.source}}</p>
+                    <div class="row">
+                        <div *ngFor="let item of currencyList" class="col-sm-4">
+                            <span><b>{{item.name}}: </b>{{item.value}}</span>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

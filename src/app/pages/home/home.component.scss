@@ -1,0 +1,20 @@
+.home-page {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    .item {
+        background-color: #000736;
+        color: #fff;
+        padding: 15px;
+        border-radius: 15px;
+        min-height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        i {
+            font-size: 30px;
+        }
+        text-align: center;
+    }
+}
