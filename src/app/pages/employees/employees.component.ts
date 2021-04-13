@@ -30,7 +30,6 @@ export class EmployeesComponent implements OnInit {
         )
         element.fullAddress = element.location.street.number+' '+ element.location.street.name+', '+element.location.city+', '+element.location.country+', '+element.location.postcode
       });
-      console.log(res)
     }))
   }
 

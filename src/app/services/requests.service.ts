@@ -36,7 +36,6 @@ export class RequestsService {
 
   getExchange(data:any):Observable<any>{
     return this.http.get<any>('http://api.currencylayer.com/live?access_key=ae288a068c3ee292db1c9aa7e3b12b64&source='+data.from+'&currencies='+data.to).pipe(map(response => {
-      console.log(response)
       return response;
     }))
   }

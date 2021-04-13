@@ -38,8 +38,7 @@ export class RatesComponent implements OnInit {
     if(this.dataForm.invalid){
       return
     }
-    console.log(this.dataForm.value)
-    this.dataForm.controls.sum.patchValue((this.dataForm.value.to/this.dataForm.value.from)*this.dataForm.value.amount)
+    this.dataForm.controls.sum.patchValue(((this.dataForm.value.to/this.dataForm.value.from)*this.dataForm.value.amount).toFixed(2))
   }
 
 }
